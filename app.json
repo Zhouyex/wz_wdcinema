@@ -1,8 +1,8 @@
 {
   "pages": [
-    "pages/cinemar/cinemar",
-    "pages/citys/citys"
-   
+    
+    "pages/citys/citys",
+   "pages/cinemar/cinemar"
     
   ],
   "window": {
