@@ -1,18 +1,19 @@
 
 let Reqhttp = require('../../utils/reqhttp.js');
-// pages/citys/citys.js
+let getloc = require('../../utils/location.js');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    currCity:'',
     cityList:[]
   },
 
   // 路由跳转函数
   gocinemar(event){
-    console.log(event)
+    // console.log(event)
     wx.navigateTo({
       // url: '/pages/cinemar/cinemar',
       url: `/pages/cinemar/cinemar?cityid=${event.target.id}`,
@@ -21,39 +22,38 @@ Page({
   },
 
 
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // 获取坐标
+    getloc((loc)=>{
+      let{'result':{'address_component':{ city }}} = loc;
+      console.log(city,'currcityyyy')
+      this.setData({
+        currCity: city
+      })
+    });
+
+    // 获取城市们
     let getDataCitys = new Reqhttp();
     getDataCitys.getcitys((response)=>{
       // console.log(response,'onloaddddd');
       let {data:{citys}} = response;
       // console.log(citys,'loadddddd');  //得到数组 （611个）
-      // this.setData({
-      //   cityList: citys
-      // })
       // console.log(this.data.cityList); //ok
-
       let tmp_citys = {};
       for(let i=0; i<26; i++)
       {
         let char = String.fromCharCode(65+i);
         tmp_citys[char] = [];
-
-      
       }
-      // console.log(this.data.cityList) //[]  空的
-
       // 开始循环 进行A B C D..数组的 push
       citys.forEach(val => {
         // console.log(val, 'evbery'); //可以得到
         tmp_citys[String(val.city_pre).toUpperCase()].push(val)
-
-
       })
-
-
       // console.log(tmp_citys); //可以得到空的 A B C D 数组
       for (let i in tmp_citys) // i => 键名
       {
@@ -67,9 +67,11 @@ Page({
         cityList : tmp_citys
       })
       // console.log(this.data.cityList)
-
-
     })
+    // 获取城市--完
+
+
+
     
   },
 

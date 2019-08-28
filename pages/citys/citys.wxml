@@ -1,7 +1,7 @@
 <view>
   <view>
     <text>当前城市：</text>
-    <text>北京</text>
+    <text>{{currCity}}</text>
   </view>
     <!-- A  城市 -->
       <view wx:for="{{cityList}}" wx:key="{{index}}" wx:for-item="cts" class="citys">

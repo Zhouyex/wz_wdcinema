@@ -1,6 +1,7 @@
 <view>
   <view class="city">
-    <text>北京</text>
+    <text class="currcity">北京</text>
+    <text class="fa fa-angle-down"></text>
   </view>
 
   <view class="cenimars">

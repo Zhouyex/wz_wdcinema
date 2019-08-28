@@ -1,8 +1,9 @@
 {
   "pages": [
-    
     "pages/citys/citys",
-   "pages/cinemar/cinemar"
+    "pages/cinemar/cinemar"
+    
+   
     
   ],
   "window": {
@@ -10,6 +11,11 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "万达电影想要获取您的地理位置"
+    }
   },
   "sitemapLocation": "sitemap.json"
 }

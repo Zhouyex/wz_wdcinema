@@ -12,10 +12,11 @@ Page({
     cenimars:[]
   },
 
+  // 获取电影院们
   getcenimar(page){
     let getCenimaerData = new Reqhttp();
     getCenimaerData.getcimemars(page,(res) => {
-      console.log(res); //可以拿到数据
+      // console.log(res); //可以拿到数据
       let { data: { data, totalpage}} = res;
       // console.log(data,'dataaaaa');
       // console.log(totalpage)
@@ -27,10 +28,8 @@ Page({
         totalpage,
         cenimars: tmp_cenimars
       })
-
-      console.log(this.data.cenimars,'dataaaaa')
+      // console.log(this.data.cenimars,'dataaaaa')
     })
-
   },
 
   /**
@@ -41,7 +40,8 @@ Page({
     this.getcenimar(this.data.currpage);
     // 异步 一开始可还没 数据呢 []
     // console.log(this.data.cenimars,'ccccc')
-    
+
+ 
 
   },
 
@@ -56,7 +56,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
+   
+
+
   },
 
   /**

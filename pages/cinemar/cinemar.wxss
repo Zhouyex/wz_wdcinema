@@ -4,6 +4,10 @@
   line-height: 80rpx;
   padding-left: 20rpx;
 }
+.currcity{
+  display: inline-block;
+  padding-right: 10rpx;
+}
 .cenimars_items{
   height: 180rpx;
   /* background-color: red; */
