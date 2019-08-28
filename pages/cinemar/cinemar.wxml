@@ -1,0 +1,16 @@
+<view>
+  <view class="city">
+    <text>北京</text>
+  </view>
+
+  <view class="cenimars">
+    <view class="cenimars_items" wx:for="{{cenimars}}" wx:key="{{item.id}}">
+      <text class="cinemaname">{{item.cinemaName}}</text>
+      <text class="cinemaddress">{{item.address}}</text>
+    </view>  
+   
+  </view>
+
+
+
+</view>

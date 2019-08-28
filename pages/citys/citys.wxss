@@ -1,0 +1,18 @@
+.city_pre{
+  background-color:#ccc ;
+  height: 60rpx;
+  line-height: 60rpx;
+  margin-top: 10rpx;
+  padding-left: 20rpx;
+}
+.city_content{
+  display: flex;
+  flex-flow: wrap;
+  padding-left: 20rpx;
+
+}
+.city_content_item{
+  flex: 0 0 180rpx;
+  font-size: 35rpx;
+  padding-top:10rpx; 
+}

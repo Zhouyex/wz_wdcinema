@@ -1,0 +1,29 @@
+.city{
+  background-color: #ccc;
+  height:80rpx;
+  line-height: 80rpx;
+  padding-left: 20rpx;
+}
+.cenimars_items{
+  height: 180rpx;
+  /* background-color: red; */
+  /* margin-top:20rpx; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: 20rpx;
+  border-bottom: 1px solid #ccc;
+}
+.cinemaname{
+  font-weight: bold
+}
+.cinemaddress{
+  font-size: 30rpx;
+  color: gray;
+  width: 600rpx;
+  display: inline-block;
+  /* background-color: pink; */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
