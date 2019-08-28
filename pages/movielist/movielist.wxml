@@ -1,0 +1,21 @@
+<view>
+    <!-- 头部影院名称 -->
+    <view bindtap="gotocinemas" class="navbar" style="position:absolute;top:{{statusBarHeight}}px">
+      <navigator open-type="navigateBack">
+        <text class="fa fa-map-marker"></text>
+        <text class="curr_cinema">{{currCinema}}</text>
+      </navigator>
+      
+    </view>
+
+    <!-- 主题内容 -->
+    <!-- 轮播图 -->
+    <swiper style="position:absolute;top:{{statusBarHeight+44}}px;" class="swiper_loop" indicator-dots="true"autoplay="true" interval="{{interval}}" duration="{{duration}}" circular="{{true}}">
+      <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+        <swiper-item>
+          <image src="{{item}}" class="imgs"/>
+        </swiper-item>
+      </block>
+    </swiper>
+
+</view>

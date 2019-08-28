@@ -1,0 +1,18 @@
+.navbar{
+  height: 44px;
+  line-height: 44px;
+  /* background-color: pink; */
+  padding-left:20rpx; 
+
+}
+.curr_cinema{
+  margin-left: 20rpx; 
+}
+.swiper_loop{
+  width: 100%;
+  height: 200rpx;
+}
+.imgs{
+  width: 100%;
+  height: 100%;
+}

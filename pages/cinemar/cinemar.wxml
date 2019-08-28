@@ -1,11 +1,17 @@
 <view>
-  <view class="city">
-    <text class="currcity">北京</text>
-    <text class="fa fa-angle-down"></text>
+  <view class="city" >
+  <!-- 点击左上角城市名+下拉箭头  返回城市们 页面 -->
+    <navigator open-type="navigateBack">
+      <text class="currcity">{{currCity}}</text>
+      <!-- 下箭头图标 -->
+      <text class="fa fa-angle-down"></text>
+    </navigator>
+    
   </view>
 
   <view class="cenimars">
-    <view class="cenimars_items" wx:for="{{cenimars}}" wx:key="{{item.id}}">
+  <!-- 使用gotomovielist 使用编程式导航  调到电影详情页面  -->
+    <view class="cenimars_items" wx:for="{{cenimars}}" wx:key="{{item.id}}" data-currcinemainfo="{{item}}" bindtap="gotomovielist">
       <text class="cinemaname">{{item.cinemaName}}</text>
       <text class="cinemaddress">{{item.address}}</text>
     </view>  

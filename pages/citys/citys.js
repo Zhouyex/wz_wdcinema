@@ -13,12 +13,18 @@ Page({
 
   // 路由跳转函数
   gocinemar(event){
-    // console.log(event)
+    // console.log(event);
     wx.navigateTo({
       // url: '/pages/cinemar/cinemar',
       url: `/pages/cinemar/cinemar?cityid=${event.target.id}`,
       // url: `/pages/cinemar/cinemar?cityid=${event.target.dataset.cityid}`,
-    })
+    });
+
+    // console.log(event.currentTarget.dataset.cityid.city_name)
+    // 将点击的城市存入 storage中
+    
+    wx.setStorageSync("clickCity",event.currentTarget.dataset.cityid.city_name)
+
   },
 
 
@@ -30,7 +36,7 @@ Page({
     // 获取坐标
     getloc((loc)=>{
       let{'result':{'address_component':{ city }}} = loc;
-      console.log(city,'currcityyyy')
+      // console.log(city,'currcityyyy')
       this.setData({
         currCity: city
       })
@@ -86,7 +92,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+      this.setData({
+        currCity : wx.getStorageSync('clickCity')
+      })
   },
 
   /**

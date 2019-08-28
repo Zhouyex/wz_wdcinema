@@ -1,23 +1,21 @@
 <view>
-  <view>
-    <text>当前城市：</text>
-    <text>{{currCity}}</text>
-  </view>
+    <view>
+      <text>当前城市：</text>
+      <text>{{currCity}}</text>
+    </view>
+
     <!-- A  城市 -->
-      <view wx:for="{{cityList}}" wx:key="{{index}}" wx:for-item="cts" class="citys">
-        <!-- 前面的A B C D ... 索引值 -->
-        <view class="city_pre"> {{index}} </view>
-        <!-- 各个城市 -->
-        <view class="city_content">
-          <view wx:for="{{cts}}" wx:key="{{index}}" class="city_content_item" bindtap="gocinemar" data-cityid="{{item.id}}" id="{{item.id}}">
-              
-              <!-- <navigator url="/pages/cinemar/cinemar" >{{item.city_name}}</navigator> -->
-              {{item.city_name}}
-
-          </view>
-        </view> 
-
+    <view wx:for="{{cityList}}" wx:key="{{index}}" wx:for-item="cts" class="citys">
+      <!-- 前面的A B C D ... 索引值 -->
+      <view class="city_pre"> {{index}} </view>
+      <!-- 各个城市 -->
+      <view class="city_content">
+        <view wx:for="{{cts}}" wx:key="{{index}}" class="city_content_item" bindtap="gocinemar" data-cityid="{{item}}" id="{{item.id}}">
+            <!-- <navigator url="/pages/cinemar/cinemar" >{{item.city_name}}</navigator> -->
+            {{item.city_name}}
+        </view>
       </view> 
+    </view> 
   <view>
 
   </view>

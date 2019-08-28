@@ -7,6 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    currCity:'',
     currpage:1,
     totlapage:0,
     cenimars:[]
@@ -32,6 +33,21 @@ Page({
     })
   },
 
+  // 编程式导航 到电影列表 的页面 movielist
+  gotomovielist: function(event)
+  {
+      // console.log(1) //可以
+      // console.log(event);
+      // 拿到电影名称
+      // console.log(event.currentTarget.dataset.currcinemainfo.cinemaName);
+      // 存储当前点击的影院名称
+      wx.setStorageSync('currCinema', event.currentTarget.dataset.currcinemainfo.cinemaName)
+
+      wx.navigateTo({
+        url: '/pages/movielist/movielist'
+      })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -41,6 +57,20 @@ Page({
     // 异步 一开始可还没 数据呢 []
     // console.log(this.data.cenimars,'ccccc')
 
+    // 获取从城市们 页面点击过来的 城市名字
+    this.setData({
+      currCity: wx.getStorageSync('clickCity')
+    })
+    // wx.getStorage({
+    //   key: 'clickCity',
+    //   success(res) {
+    //     console.log(res.data,'成功gggggg');
+    //     // console.log(this);
+    //     // this.setData({
+    //     //   currCity: res.data
+    //     // })
+    //   }
+    // });
  
 
   },
