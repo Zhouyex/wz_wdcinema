@@ -1,7 +1,8 @@
 <view>
   <view class="city" >
   <!-- 点击左上角城市名+下拉箭头  返回城市们 页面 -->
-    <navigator open-type="navigateBack">
+    <!-- <navigator open-type="navigateBack"> -->
+    <navigator url="/pages/citys/citys?msg=jump">
       <text class="currcity">{{currCity}}</text>
       <!-- 下箭头图标 -->
       <text class="fa fa-angle-down"></text>

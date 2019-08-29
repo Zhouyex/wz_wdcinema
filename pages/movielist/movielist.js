@@ -10,7 +10,8 @@ Page({
     statusBarHeight:20,
     interval: 2000,
     duration: 1000,
-    imgUrls:[]
+    imgUrls:[],
+    movieList:[]
   },
 
   getswiper(){
@@ -22,16 +23,32 @@ Page({
       })
     })
   },
+  getmovies(){
+    let reqhttp = new Reqhttp();
+    reqhttp.getmovies((res)=>{
+      // console.log(res);
+      let {data:{result:{lists}}} = res
+      // console.log(lists);
+      this.setData({
+        movieList: lists
+      });
+      console.log(this.data.movieList,'sd') //可以的
+
+      
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(wx.getStorageSync('currCinema'))
     // 获取设备的navbar 那边的高度
     this.setData({
       statusBarHeight:wx.getSystemInfoSync().statusBarHeight,
       currCinema: wx.getStorageSync('currCinema')
     })
     this.getswiper();
+    this.getmovies();
   },
 
   /**
@@ -45,7 +62,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.setData({
+      // statusBarHeight: wx.getSystemInfoSync().statusBarHeight,
+      currCinema: wx.getStorageSync('currCinema')
+    })
   },
 
   /**

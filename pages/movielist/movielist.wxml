@@ -1,14 +1,13 @@
 <view>
     <!-- 头部影院名称 -->
     <view bindtap="gotocinemas" class="navbar" style="position:absolute;top:{{statusBarHeight}}px">
-      <navigator open-type="navigateBack">
+      <navigator url="/pages/cinemar/cinemar">
         <text class="fa fa-map-marker"></text>
         <text class="curr_cinema">{{currCinema}}</text>
       </navigator>
       
     </view>
 
-    <!-- 主题内容 -->
     <!-- 轮播图 -->
     <swiper style="position:absolute;top:{{statusBarHeight+44}}px;" class="swiper_loop" indicator-dots="true"autoplay="true" interval="{{interval}}" duration="{{duration}}" circular="{{true}}">
       <block wx:for="{{imgUrls}}" wx:key="{{index}}">
@@ -17,5 +16,19 @@
         </swiper-item>
       </block>
     </swiper>
+
+    <!-- 电影列表 -->
+
+    <view class="movielist" style="">
+        <view wx:for="{{movieList}}" wx:key="{{index}}">  
+            <view>
+                <view>
+                  <image src="{{item.pic_url}}" class="movie_img"></image>
+                </view>
+                {{item.movieName}}
+            </view>
+        </view>
+    
+    </view>
 
 </view>

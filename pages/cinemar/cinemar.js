@@ -39,12 +39,15 @@ Page({
       // console.log(1) //可以
       // console.log(event);
       // 拿到电影名称
-      // console.log(event.currentTarget.dataset.currcinemainfo.cinemaName);
+      console.log(event.currentTarget.dataset.currcinemainfo.cinemaName);
       // 存储当前点击的影院名称
       wx.setStorageSync('currCinema', event.currentTarget.dataset.currcinemainfo.cinemaName)
 
-      wx.navigateTo({
-        url: '/pages/movielist/movielist'
+      // wx.navigateTo({
+      //   url: '/pages/movielist/movielist'
+      // })
+      wx.switchTab({
+        url: '/pages/movielist/movielist' ,
       })
   },
 

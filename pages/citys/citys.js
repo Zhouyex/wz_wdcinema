@@ -7,6 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    crrCityTxt:'',
     currCity:'',
     cityList:[]
   },
@@ -33,6 +34,18 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options,'citysssss')
+    // 进行页面的跳转3
+    if (options.msg !== 'jump')
+    {
+      if (wx.getStorageSync('currCinema')) {
+        wx.switchTab({
+          url: '/pages/movielist/movielist',
+        })
+      }
+    }
+    
+
     // 获取坐标
     getloc((loc)=>{
       let{'result':{'address_component':{ city }}} = loc;
@@ -85,7 +98,12 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    
+        wx.setNavigationBarTitle({
+          title: '选择城市',
+          
+        })
+      
   },
 
   /**

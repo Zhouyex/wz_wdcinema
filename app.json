@@ -1,15 +1,50 @@
 {
   "pages": [
-    "pages/citys/citys",
-    "pages/cinemar/cinemar"
     
+    
+    "pages/citys/citys",
+    "pages/cinemar/cinemar",
+    "pages/movielist/movielist",
+    "pages/mine/mine",
+    "pages/saler/saler"
    
     
+    
+    
+    
+     
   ],
+  "tabBar":{
+    "color":"#000",
+    "selectedColor":"#f4ea2a",
+    "borderStyle":"black",
+    "list":[
+        { 
+          "pagePath":"pages/movielist/movielist",
+          "text":"电影",
+          "iconPath":"public/tabbaricon/movie_gray.png",
+          "selectedIconPath":"public/tabbaricon/movie_gold.png"
+
+        },
+        {
+          "pagePath": "pages/saler/saler",
+          "text": "售品",
+          "iconPath": "public/tabbaricon/product_gray.png",
+          "selectedIconPath": "public/tabbaricon/product_gold.png"
+        },
+        {
+          "pagePath": "pages/mine/mine",
+          "text": "我的",
+          "iconPath": "public/tabbaricon/person_gray.png",
+          "selectedIconPath": "public/tabbaricon/person_gold.png"
+        }
+    ]
+
+  },
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "",
     "navigationBarTextStyle": "black"
   },
   "permission": {

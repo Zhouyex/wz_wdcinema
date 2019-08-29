@@ -16,3 +16,15 @@
   width: 100%;
   height: 100%;
 }
+
+/* 电影列表 */
+.movielist{
+  position: absolute;
+  top: calc( 20px + 44px + 200rpx );
+  width: 100%;
+  height: calc(100% - 20px - 44px - 200rpx );
+  overflow-y: scroll;
+}
+.movie_img{
+  width: 300rpx;
+}
