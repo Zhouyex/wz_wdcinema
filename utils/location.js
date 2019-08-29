@@ -13,7 +13,7 @@ function getloc(callback)
     type: 'wgs84',
     success(res) {
       // 在res中取得坐标
-      console.log(res)
+      // console.log(res)
 
       const latitude = res.latitude
       const longitude = res.longitude

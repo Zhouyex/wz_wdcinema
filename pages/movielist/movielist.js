@@ -32,16 +32,48 @@ Page({
       this.setData({
         movieList: lists
       });
-      console.log(this.data.movieList,'sd') //可以的
+      // console.log(this.data.movieList,'sd') //可以的
 
       
     })
   },
+
+
+  getmovieinfo() {
+    let reqhttp = new Reqhttp();
+    reqhttp.getmovieinfo((res) => {
+      console.log(res,'infooooo');
+      // let { data: { result: { lists } } } = res
+      // console.log(lists);
+      // this.setData({
+      //   movieList: lists
+      // });
+      // console.log(this.data.movieList, 'sd') //可以的
+
+
+    })
+  },
+
+  // 点击电影 显示电影信息
+  getmoviemsg:function()
+  {
+      // console.log('info')
+      wx.navigateTo({
+        url: "/pages/movie/movie",
+      })
+  },
+
+  gogetticket:function(){
+
+      console.log('gogetticket')
+  },
+
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(wx.getStorageSync('currCinema'))
+    // console.log(wx.getStorageSync('currCinema'))
     // 获取设备的navbar 那边的高度
     this.setData({
       statusBarHeight:wx.getSystemInfoSync().statusBarHeight,
@@ -49,6 +81,7 @@ Page({
     })
     this.getswiper();
     this.getmovies();
+    // this.getmovieinfo();
   },
 
   /**

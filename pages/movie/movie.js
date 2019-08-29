@@ -1,4 +1,6 @@
-// pages/movie/movie.js
+
+let Reqhttp = require('../../utils/reqhttp.js')
+
 Page({
 
   /**
@@ -8,11 +10,26 @@ Page({
 
   },
 
+  //获取电影详情
+  getmovieinfo() {
+    let reqhttp = new Reqhttp();
+    reqhttp.getmovieinfo((res) => {
+      console.log(res, 'infooooo');
+      let { data: { result } } = res
+      console.log(result);
+      // this.setData({
+      //   movieList: lists
+      // });
+      // console.log(this.data.movieList, 'sd') //可以的
+
+
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getmovieinfo();
   },
 
   /**

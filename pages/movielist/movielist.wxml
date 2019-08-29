@@ -19,16 +19,21 @@
 
     <!-- 电影列表 -->
 
-    <view class="movielist" style="">
-        <view wx:for="{{movieList}}" wx:key="{{index}}">  
-            <view>
-                <view>
-                  <image src="{{item.pic_url}}" class="movie_img"></image>
-                </view>
-                {{item.movieName}}
-            </view>
+    <scroll-view scroll-y class="movielist" style="top: calc( {{statusBarHeight}}px + 44px + 200rpx );">
+        <view wx:for="{{movieList}}" wx:key="{{index}}" style="width:100%;">  
+              <view bindtap="getmoviemsg" class="movie_items" style="width:calc(100% - 20rpx)">
+                <view class="movie_img_text"><image src="{{item.pic_url}}" class="movie_img"></image> </view>
+                <view class="movie_name">{{item.movieName}}</view> 
+                <view class="movie_dcr">演的很好的电影</view>
+                <view class="movie_actor">张磊/金世杰/张译</view>
+
+                <view class="pnum_wrap"><text class="pnum">9.9</text>分</view>
+                <view catchtap="gogetticket" class="buy_ticket">购票</view>
+              </view>  
         </view>
+
+
     
-    </view>
+    </scroll-view>
 
 </view>

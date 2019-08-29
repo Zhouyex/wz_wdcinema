@@ -45,15 +45,23 @@ Page({
       }
     }
     
-
-    // 获取坐标
-    getloc((loc)=>{
-      let{'result':{'address_component':{ city }}} = loc;
-      // console.log(city,'currcityyyy')
+    // console.log(wx.getStorageSync('clickCity'),'currrrrr')
+    if (wx.getStorageSync('clickCity'))
+    {
       this.setData({
-        currCity: city
+        currCity: wx.getStorageSync('clickCity')
       })
-    });
+    }else{
+      // 获取坐标
+      getloc((loc) => {
+        let { 'result': { 'address_component': { city } } } = loc;
+        // console.log(city,'currcityyyy')
+        this.setData({
+          currCity: city
+        })
+      });
+    }
+    
 
     // 获取城市们
     let getDataCitys = new Reqhttp();
@@ -103,6 +111,8 @@ Page({
           title: '选择城市',
           
         })
+
+    
       
   },
 
@@ -113,6 +123,12 @@ Page({
       this.setData({
         currCity : wx.getStorageSync('clickCity')
       })
+
+    // if (wx.getStorageSync('clickCity')) {
+    //   this.setData({
+    //     currCity: wx.getStorageSync('clickCity')
+    //   })
+    // }
   },
 
   /**

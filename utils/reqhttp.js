@@ -4,6 +4,10 @@
 
 const CITY = 'citys.php';
 const CINIMARS = 'cinemas.php';
+const SWIPER = "getSwiper.php";
+const MOVIE_LIST = "cinemasmovies.php";
+const MOVIE_INFO = "movieInfo.php";
+
 class Reqhttp{
   constructor()
   {
@@ -42,6 +46,28 @@ class Reqhttp{
 
     });
   }
+
+  getswiper(callback) {
+    this.common(SWIPER, {}, (response) => {
+      callback(response)
+
+    });
+  }
+
+  getmovies(callback) {
+    this.common(MOVIE_LIST, {}, (response) => {
+      callback(response)
+
+    });
+  }
+
+  getmovieinfo(callback) {
+    this.common(MOVIE_INFO, {}, (response) => {
+      callback(response)
+
+    });
+  }
+
 
 
 
